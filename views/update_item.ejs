@@ -1,0 +1,96 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+            <a href="/admin"><button type="button" class="btn btn-warning"><i class="fas fa-angle-double-left"></i> Back</button></a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Item</h2>
+            <span class="text-dark">Use the below form to Update an Item</span>
+        </div>
+
+        <!-- add item form -->
+         <!-- form handling -->
+ <form method="POST" id="update_item">
+    <div class="new_item">
+        <div class="form-group">
+            <p>Type</p>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="X" value="Food" <%= item.X == 'Food' ? 'checked' : '' %>>
+                <label for="radio-2" class="radio-label">Food</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="X" value="Drink" <%= item.X == 'Drink' ? 'checked' : '' %> >
+                <label for="radio-3" class="radio-label">Drink</label>
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label for="Brand" class="text-dark">Brand</label>
+            <input type="hidden" name="id" value="<%= item._id %>" required>
+            <input type="text" name="Brand" value="<%= item.Brand %>" placeholder="Brand" required>
+        </div>
+        <div class="form-group">
+            <label for="Name" class="text-dark">Name</label>
+            <input type="hidden" name="id" value="<%= item._id %>" required>
+            <input type="text" name="Name" value="<%= item.Name %>" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <label for="CountryOfOrigin" class="text-dark">Country Of Origin</label>
+            <input type="hidden" name="id" value="<%= item._id %>" required>
+            <input type="text" name="CountryOfOrigin" value="<%= item.CountryOfOrigin %>" placeholder="Country Of Origin" required>
+        </div>
+        <div class="form-group">
+            <label for="HalalStatus" class="text-dark">Halal Status</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="HalalStatus" value="Halal" <%= item.HalalStatus == 'Halal' ? 'checked' : '' %>>
+                <label for="radio-4" class="radio-label">Halal</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="HalalStatus" value="Haram" <%= item.HalalStatus == 'Haram' ? 'checked' : '' %> >
+                <label for="radio-5" class="radio-label">Haram</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-6" name="HalalStatus" value="Mushbooh" <%= item.HalalStatus == 'Mushbooh' ? 'checked' : '' %> >
+                <label for="radio-6" class="radio-label">Mushbooh</label>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <p>Last Date of Certification</p>
+            <input type="hidden" name="id" value="<%= item._id %>" required>
+            <input type="date" name="LastDateofCertification" value="<%= item.LastDateofCertification %>" placeholder="Last Date of Certification" required>
+            
+        </div>
+
+        <div class="form-group">
+            <p>Last Date of Review</p>
+            <input type="hidden" name="id" value="<%= item._id %>" required>
+            <input type="date" name="LastDateofReview" value="<%= item.LastDateofReview %>" placeholder="Last Date of Review" required>
+            
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

@@ -1,0 +1,25 @@
+
+<% for(var i = 0; i < items.length; i++) { %>
+    <tr class="table-row">
+        <td class="table-data"><%= i + 1 %></td>
+        <td class="table-data"><%= items[i].X %></td>
+        <td class="table-data"><%= items[i].Brand %></td>
+        <td class="table-data"><%= items[i].Name %></td>
+        <td class="table-data"><%= items[i].CountryOfOrigin %></td>
+        <td class="table-data"><%= items[i].HalalStatus %></td>
+        <td class="table-data"><%= items[i].LastDateofCertification %></td>
+        <td class="table-data"><%= items[i].LastDateofReview %></td>
+
+        <td class="table-data">
+            <a href="/update-item?id=<%= items[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+        </td>
+
+        <td class="table-data">
+            <a class="btn border-shadow delete" data-id="<%= items[i]._id%>" >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% } %>

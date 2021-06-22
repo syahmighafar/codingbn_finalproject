@@ -1,0 +1,48 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+<link rel="stylesheet" href="css/style.css">
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container-fluid">
+    
+            <div class="row">
+                <h1>List of Food and Drink</h1>
+                <br><br><br>
+                <div class="searchbox col-lg-3">
+                    <input type="search" placeholder="Search..." class="form-control search-input" data-table="customers-list"/>
+                </div>
+                <div class="col-lg-9">
+                </div>
+                <br><br>
+            </div>
+
+            <!-- form handling -->
+            <form action="/public" method="POST">
+                <table class="table customers-list" id="myTable" >
+                    <thead class="thead-dark">
+                        <tr class="table-header">
+                            <th class="header__item"><a id="ID" class="filter__link" href="#">ID</a></th>
+                            <th class="header__item"><a id="Type" class="filter__link" href="#">Type</a></th>
+                            <th class="header__item"><a id="Brand" class="filter__link" href="#">Brand</a></th>
+                            <th class="header__item"><a id="Name" class="filter__link" href="#">Name</a></th>
+                            <th class="header__item"><a id="CountryOfOrigin" class="filter__link" href="#">Country Of Origin</a></th>
+                            <th class="header__item"><a id="HalalStatus" class="filter__link" href="#">Halal Status</a></th>
+                            <th class="header__item"><a id="LastDateofCertification" class="filter__link" href="#">Last Date Of Certification</a></th>
+                            <th class="header__item"><a id="LastDateofReview" class="filter__link" href="#">Last Date Of Review</a></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-content">
+                        <%- include('include/_public_show') %>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+<!-- /Main Site -->
+
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
